@@ -1,5 +1,4 @@
-# hudl-ui-tests
-Hudl Frontend test suite
+# Hudl Frontend test suite
 
 Hudl Frontend tests are BDD tests which runs against Hudl portal to test scenarios in the UI.
 Version 1.0 is for testing the login feature of Hudl. The same framework can be used to build the other tests on top by making use of the existing methods in the test suite. It is a Maven project based in Cucumber and TestNG framework written in Java. There are three modules in the project which are also individually based in Maven :
@@ -22,6 +21,7 @@ Features can be grouped and run based on their tags.
 For Example: To run login tests alone, use @login in the tags field of PortalTestRunner.java class. To run tests based on priority use level tags like @level0 in the Runner class.
 
 REQUIREMENTS
+
 Java 1.8 Maven 3.x.x or above
 
 These are the prerequisites before running the tests: Java can be installed from here - https://www.oracle.com/technetwork/java/javase/downloads/index.html The most reliable and highly recommended version of Java is Java 8 which is compatible with almost all configurations.
@@ -35,6 +35,7 @@ Browser Drivers - The tests run on EDGE browser by default which can be modified
 Please note that the password in common.properties file needs to be updated with your working password along with the email ID before running the tests. This can be included as secrets in environment variable where the tests are scheduled to run automatically.
 
 RUNNING THE TESTS
+
 Open Command prompt in administrator mode
 
 Type mvn install
