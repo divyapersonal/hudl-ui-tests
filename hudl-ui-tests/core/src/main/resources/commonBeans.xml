@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <context:property-placeholder location="classpath*:common.properties"/>
+
+    <bean id="configOptions" class="com.hudl.test.ui.core.stepDefinition.ConfigurationOptions">
+        <property name="loginUrl" value="${login.url}" />
+        <property name="userName" value="${login.username}" />
+        <property name="password" value="${login.password}" />
+        <property name="zoomLevel" value="${transition.zoom_level}" />
+        <property name="transitionScreenshotDir" value="${transition.screenshot.dir}" />
+        <property name="mailHost" value="${email.host}" />
+        <property name="mailPort" value="${email.port}" />
+        <property name="mailFrom" value="${email.from}" /></bean>
+
+    <bean id="webDriver" class="com.hudl.test.ui.core.driver.WebDriverFactory">
+        <property name="browserName" value="${browser}"/>
+        <property name="driverPath" value="${driver.path}"/>
+    </bean>
+    
+    
+
+    <bean id="applicationClosedEventListener" class="com.hudl.test.ui.core.driver.ApplicationClosedEventListener"/>
+
+</beans>
